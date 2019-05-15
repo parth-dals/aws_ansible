@@ -1,0 +1,11 @@
+---
+- hosts: web
+  tasks:
+    - name: install ntp
+      package:
+        name: ntp
+        state: present
+    - name: check ntp service state
+      service:
+        name: ntp
+        state: started
